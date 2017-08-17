@@ -12,23 +12,32 @@
   var translator = function(standardNumber){
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
+      if ((i >= 900) && (i < 1000)){
+        result += romanNumber[4] + romanNumber[6];
+        i -= 899;
+      }
 
-      if ((i >= 90) && (i < 100)){
-        result += romanNumber[2] += romanNumber[4];
+      else if ((i >= 400) && (i < 500)){
+        result += romanNumber[4] + romanNumber[5];
+        i -= 399;
+      }
+
+      else if ((i >= 90) && (i < 100)){
+        result += romanNumber[2] + romanNumber[4];
         i -= 89;
       }
 
       else if ((i >= 40) && (i <= 49)){
-        result += romanNumber[2] += romanNumber[3];
+        result += romanNumber[2] + romanNumber[3];
         i -= 39;
       }
       else if (i === 9){
-        result += romanNumber[0] += romanNumber[2];
+        result += romanNumber[0] + romanNumber[2];
         i -= 9;
       }
 
       else if (i === 4){
-        result += romanNumber[0] += romanNumber[1];
+        result += romanNumber[0] + romanNumber[1];
         i -= 4;
       }
       else if (i >= 1000){
