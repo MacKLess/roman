@@ -12,18 +12,29 @@
   var translator = function(standardNumber){
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
-      if (i >= 50){
+      if (i >= 1000){
+        result += romanNumber[6];
+        i -= 999;
+      }
+      else if (i >= 500){
+        result += romanNumber[5];
+        i -= 499;
+      }
+      else if (i >= 100){
+        result += romanNumber[4];
+        i -= 99;
+      }
+      else if (i >= 50){
         result += romanNumber[3];
         i -= 49;
       }
-
       else if (i >= 10){
         result += romanNumber[2];
-        i-=9;
+        i -= 9;
       }
       else if (i >= 5){
         result += romanNumber[1];
-        i-=4;
+        i -= 4;
       }
       else{
         result += romanNumber[0];
