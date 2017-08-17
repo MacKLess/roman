@@ -8,13 +8,16 @@
   // var D = 500;
   // var M = 1000;
   var romanNumber = ["I", "V", "X", "L", "C", "D", "M"];
-  var weird = ["4", "9"]
 
   var translator = function(standardNumber){
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
 
-      if (i === 4){
+      if ((i >= 40) && (i < 50)){
+        result += romanNumber[2] += romanNumber[3];
+        i -= 39;
+      }
+      else if (i === 4){
         result += romanNumber[0] += romanNumber[1];
         i -= 4;
       }
