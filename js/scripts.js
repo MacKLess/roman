@@ -8,11 +8,17 @@
   // var D = 500;
   // var M = 1000;
   var romanNumber = ["I", "V", "X", "L", "C", "D", "M"];
+  var weird = ["4", "9"]
 
   var translator = function(standardNumber){
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
-      if (i >= 1000){
+
+      if (i === 4){
+        result += romanNumber[0] += romanNumber[1];
+        i -= 4;
+      }
+      else if (i >= 1000){
         result += romanNumber[6];
         i -= 999;
       }
@@ -32,6 +38,7 @@
         result += romanNumber[2];
         i -= 9;
       }
+
       else if (i >= 5){
         result += romanNumber[1];
         i -= 4;
@@ -41,13 +48,6 @@
       }
     }
         return result;
-
-    //   (standardNumber = 4){
-    //     result += romanNumber[0+=1];
-    //   }
-    //   console.log(result);
-    //   return result;
-    // }
   }
 
 //user interface logic
