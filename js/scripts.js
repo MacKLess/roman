@@ -1,14 +1,5 @@
 //Buisness Logic
-  //
-  // var I = 1;
-  // var V = 5;
-  // var X = 10;
-  // var L = 50;
-  // var C = 100;
-  // var D = 500;
-  // var M = 1000;
   var romanNumber = ["I", "V", "X", "L", "C", "D", "M"];
-
   var translator = function(standardNumber){
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
@@ -16,17 +7,14 @@
         result += romanNumber[4] + romanNumber[6];
         i -= 899;
       }
-
       else if ((i >= 400) && (i < 500)){
         result += romanNumber[4] + romanNumber[5];
         i -= 399;
       }
-
       else if ((i >= 90) && (i < 100)){
         result += romanNumber[2] + romanNumber[4];
         i -= 89;
       }
-
       else if ((i >= 40) && (i <= 49)){
         result += romanNumber[2] + romanNumber[3];
         i -= 39;
@@ -35,7 +23,6 @@
         result += romanNumber[0] + romanNumber[2];
         i -= 9;
       }
-
       else if (i === 4){
         result += romanNumber[0] + romanNumber[1];
         i -= 4;
@@ -60,7 +47,6 @@
         result += romanNumber[2];
         i -= 9;
       }
-
       else if (i >= 5){
         result += romanNumber[1];
         i -= 4;
@@ -80,9 +66,6 @@ $(document).ready(function(){
     var result = translator(standardNumber);
     console.log(standardNumber);
     $("#output").text(result);
-
-
-
   event.preventDefault();
   });
 });
