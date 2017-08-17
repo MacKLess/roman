@@ -13,10 +13,20 @@
     var result = "";
     for (var i = standardNumber; i >= 1; i--){
 
-      if ((i >= 40) && (i < 50)){
+      if ((i >= 90) && (i < 100)){
+        result += romanNumber[2] += romanNumber[4];
+        i -= 89;
+      }
+
+      else if ((i >= 40) && (i <= 49)){
         result += romanNumber[2] += romanNumber[3];
         i -= 39;
       }
+      else if (i === 9){
+        result += romanNumber[0] += romanNumber[2];
+        i -= 9;
+      }
+
       else if (i === 4){
         result += romanNumber[0] += romanNumber[1];
         i -= 4;
